@@ -66,6 +66,13 @@ public class FbDialog extends Dialog {
     }
 
     @Override
+    public void onBackPressed (){
+        super.onBackPressed();
+        mListener.onCancel();
+        dismiss();
+    }
+    
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mSpinner = new ProgressDialog(getContext());
